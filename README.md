@@ -2,13 +2,13 @@
 
 This project presents a lightweight and efficient deep learning model for early forest fire detection. It integrates a Multi-Scale Attention Network (MSA-Net) with Squeeze-and-Excitation (SE) blocks to enhance feature extraction and focus on fire-relevant regions. The model is optimized for real-time deployment on resource-constrained devices like drones and IoT systems.
 
-## 🚀 Features
+## Features
 - Achieved 96.1% test accuracy
 - Real-time classification performance
 - Lightweight architecture suitable for edge devices
 - Robust against background noise and varied lighting conditions
 
-## 🛠️ Technologies Used
+## Technologies Used
 - Python 3
 - TensorFlow / Keras
 - OpenCV
@@ -50,7 +50,7 @@ To install required dependencies, run:
 pip install -r requirements.txt
 ```
 ### Results
-Test Accuracy: 96.1%
-Precision: 96.5%
-Recall: 96%
-F1-Score: 96.2%
+Test Accuracy: 96.1%.
+Precision: 96.5%.
+Recall: 96%.
+F1-Score: 96.2%.
