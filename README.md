@@ -50,7 +50,10 @@ To install required dependencies, run:
 pip install -r requirements.txt
 ```
 ### Results
-Test Accuracy: 96.1%.
-Precision: 96.5%.
-Recall: 96%.
-F1-Score: 96.2%.
+Test Accuracy: 96.1%
+
+Precision: 96.5%
+
+Recall: 96%
+
+F1-Score: 96.2%
