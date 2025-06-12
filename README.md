@@ -49,7 +49,7 @@ To install required dependencies, run:
 ```python
 pip install -r requirements.txt
 ```
-### Results
+### Results:
 Test Accuracy: 96.1%
 
 Precision: 96.5%
