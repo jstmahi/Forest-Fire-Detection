@@ -26,7 +26,7 @@ The model's performance was validated using a confusion matrix, accuracy/loss cu
 ![Training vs Validation Loss](assets/Loss%20curve)
 
 ### Confusion Matrix
-![Confusion Matrix](assets/Confusion%20Matrix)
+![Confusion Matrix](https://github.com/jstmahi/Forest-Fire-Detection/blob/main/assets/Confusion%20Matrix.png)
 
 ## 🛠️ How to Use
 
