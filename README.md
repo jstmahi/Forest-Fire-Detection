@@ -1,59 +1,38 @@
-#  Forest Fire Detection Using MSA-Net with SE Blocks
+# Forest Fire Detection Using MSA-Net with SE Blocks
 
-This project presents a lightweight and efficient deep learning model for early forest fire detection. It integrates a Multi-Scale Attention Network (MSA-Net) with Squeeze-and-Excitation (SE) blocks to enhance feature extraction and focus on fire-relevant regions. The model is optimized for real-time deployment on resource-constrained devices like drones and IoT systems.
+This is a B.Tech final year project demonstrating a lightweight deep learning model for forest fire detection. The model, an MSA-Net with Squeeze-and-Excitation (SE) blocks, is designed for efficiency and accuracy, making it suitable for real-time deployment on edge devices.
 
-## Features
-- Achieved 96.1% test accuracy
-- Real-time classification performance
-- Lightweight architecture suitable for edge devices
-- Robust against background noise and varied lighting conditions
+This model was trained on a curated dataset of fire and non-fire images and achieved a **test accuracy of 96.10%**.
 
-## Technologies Used
-- Python 3
-- TensorFlow / Keras
-- OpenCV
-- Google Colab
+![Sample Predictions](assets/sample%20output-1)
 
-## 📁 Dataset
+## 📖 Abstract
 
-This project uses the Forest Fire, Smoke and Non-Fire Image Dataset from Kaggle.
+Forest fires pose a significant threat to ecosystems, biodiversity, and human life. This project proposes a novel, lightweight deep learning approach (MSA-Net with SE blocks) for rapid and accurate detection. The model uses multi-scale convolutional layers to capture varied spatial patterns and SE blocks to adaptively recalibrate feature responses, enhancing sensitivity with minimal computational overhead.
 
-### 🔽 How to Use
+## 📊 Results
 
-1. Visit the dataset page:  
-👉 [Click here to download from Kaggle](https://www.kaggle.com/datasets/amerzishminha/forest-fire-smoke-and-non-fire-image-dataset?resource=download)  
+The model's performance was validated using a confusion matrix, accuracy/loss curves, and a classification report.
 
-2. Download the ZIP file and place the extracted folders inside a `data/` directory within your project:
+| Metric | Value |
+| :--- | :--- |
+| **Test Accuracy** | **96.10%** |
+| Precision (Fire) | 0.95 |
+| Recall (Fire) | 0.98 |
+| F1-Score (Fire) | 0.96 |
 
-> Note: The dataset is **not included** in this repository due to its large size (~7GB).
+### Performance Curves
+![Training vs Validation Accuracy](assets/Accuracy%20curve)
+![Training vs Validation Loss](assets/Loss%20curve)
 
-## Trained Model
+### Confusion Matrix
+![Confusion Matrix](assets/Confusion%20Matrix)
 
-The trained model (`model.h5`, ~1.5GB) is not included in this repository due to GitHub's file size limitations.
+## 🛠️ How to Use
 
-📥 **Download the model here:**  
-👉 [model.h5 – Google Drive](https://drive.google.com/file/d/1-U_XCgM0Ay_yztxzjdDrNJIOjLS_86tQ/view?usp=sharing)
+### 1. Prerequisites
 
-###  How to Use
+You must have Python and the following libraries installed. You can install them using the `requirements.txt` file:
 
-1. Download `model.h5` from the link above.
-2. Place it in your project folder
-3. Load the model in your code using:
-
-```python
-from tensorflow.keras.models import load_model
-model = load_model('model.h5')
-```
-Installation
-To install required dependencies, run:
-```python
+```bash
 pip install -r requirements.txt
-```
-### Results:
-Test Accuracy: 96.1%
-
-Precision: 96.5%
-
-Recall: 96%
-
-F1-Score: 96.2%

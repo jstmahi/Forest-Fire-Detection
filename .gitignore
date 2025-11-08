@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# Large Files
+*.h5
+*.pth
+
+# OS
+.DS_Store
