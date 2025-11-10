@@ -37,3 +37,11 @@ You must have Python and the following libraries installed. You can install them
 
 ```bash
 pip install -r requirements.txt
+
+### 2. Get the Project Files
+
+Clone the repository to get a copy of the project on your local machine.
+
+```bash
+git clone [https://github.com/jstmahi/Forest-Fire-Detection.git](https://github.com/jstmahi/Forest-Fire-Detection.git)
+cd Forest-Fire-Detection
