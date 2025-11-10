@@ -26,7 +26,7 @@ The model's performance was validated using a confusion matrix, accuracy/loss cu
 [Training vs Validation Loss](assets/Loss%20curve.png)
 
 ### Confusion Matrix
-[Confusion Matrix](Confusion%20Matrix.png)
+[Confusion Matrix](assets/Confusion%20Matrix.png)
 
 ## 🛠️ How to Use
 
