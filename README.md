@@ -4,7 +4,7 @@ This is a B.Tech final year project demonstrating a lightweight deep learning mo
 
 This model was trained on a curated dataset of fire and non-fire images and achieved a **test accuracy of 96.10%**.
 
-![Sample Predictions](assets/sample%20output-1)
+[Sample Predictions](assets/sample%20output-1.png)
 
 ## 📖 Abstract
 
