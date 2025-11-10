@@ -22,11 +22,11 @@ The model's performance was validated using a confusion matrix, accuracy/loss cu
 | F1-Score (Fire) | 0.96 |
 
 ### Performance Curves
-![Training vs Validation Accuracy](assets/Accuracy%20curve)
-![Training vs Validation Loss](assets/Loss%20curve)
+[Training vs Validation Accuracy](assets/Accuracy%20curve.png)
+[Training vs Validation Loss](assets/Loss%20curve.png)
 
 ### Confusion Matrix
-![Confusion Matrix](https://github.com/jstmahi/Forest-Fire-Detection/blob/main/assets/Confusion%20Matrix.png)
+[Confusion Matrix](Confusion%20Matrix.png)
 
 ## 🛠️ How to Use
 
