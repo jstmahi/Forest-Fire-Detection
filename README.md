@@ -1,4 +1,4 @@
-<img width="1325" height="436" alt="image" src="https://github.com/user-attachments/assets/b38b7d0b-7a25-46b6-9220-b977e90450c9" /><img width="1325" height="436" alt="image" src="https://github.com/user-attachments/assets/e64044b5-643d-4f3a-8664-c2f55f1c04d9" /># Forest Fire Detection Using MSA-Net with SE Blocks
+# Forest Fire Detection Using MSA-Net with SE Blocks
 
 This is a B.Tech final year project demonstrating a lightweight deep learning model for forest fire detection. The model, an MSA-Net with Squeeze-and-Excitation (SE) blocks, is designed for efficiency and accuracy, making it suitable for real-time deployment on edge devices.
 
