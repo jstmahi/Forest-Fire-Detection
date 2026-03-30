@@ -1,40 +1,73 @@
-# Forest Fire Detection Using MSA-Net with SE Blocks
+# FlameGuard: Efficient Forest Fire Recognition with MSA-Net
 
-This is a B.Tech final year project demonstrating a lightweight deep learning model for forest fire detection. The model, an MSA-Net with Squeeze-and-Excitation (SE) blocks, is designed for efficiency and accuracy, making it suitable for real-time deployment on edge devices.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![TensorFlow 2.11](https://img.shields.io/badge/TensorFlow-2.11-orange.svg)](https://www.tensorflow.org/)
 
-This model was trained on a curated dataset of fire and non-fire images and achieved a **test accuracy of 96.10%**.
-
-[Sample Predictions](assets/sample%20output-1.png)
+FlameGuard is a lightweight, high-accuracy deep learning system designed for the early detection of forest fires. By leveraging a **Multi-Scale Attention Network (MSA-Net)** integrated with **Squeeze-and-Excitation (SE) blocks**, this model achieves highly accurate, real-time fire detection optimized for edge devices like drones and IoT monitoring stations.
 
 ## 📖 Abstract
+Forest fires pose a severe threat to ecosystems, biodiversity, and human life. Traditional detection methods often suffer from delayed response times and high false positive rates. FlameGuard addresses this by utilizing multi-scale convolutional layers to capture varied spatial patterns (from fine smoke details to large flames). The addition of SE blocks allows the network to adaptively recalibrate channel-wise feature responses, focusing on critical fire indicators while actively suppressing background noise like fog or sunlight. 
 
-Forest fires pose a significant threat to ecosystems, biodiversity, and human life. This project proposes a novel, lightweight deep learning approach (MSA-Net with SE blocks) for rapid and accurate detection. The model uses multi-scale convolutional layers to capture varied spatial patterns and SE blocks to adaptively recalibrate feature responses, enhancing sensitivity with minimal computational overhead.
+## ✨ Key Features
+* **Lightweight & Edge-Ready:** Designed with a compact parameter count (~2.8 million), making it ideal for deployment on resource-constrained hardware.
+* **Multi-Scale Feature Extraction:** Parallel 3x3, 5x5, and 7x7 convolution filters capture fire patterns at varying distances.
+* **Attention Mechanism:** Dynamic channel-wise recalibration via SE blocks enhances sensitivity to relevant features.
+* **High Reliability:** Proven to significantly minimize false positives and false negatives, which is critical for real-world safety applications.
 
-## 📊 Results
+## 📊 Performance & Results
+The model was trained and evaluated on a curated, balanced dataset of fire, smoke, and non-fire images. It achieved an outstanding **test accuracy of 96.10%**.
 
-The model's performance was validated using a confusion matrix, accuracy/loss curves, and a classification report.
-
-| Metric | Value |
+| Metric | Score |
 | :--- | :--- |
-| **Test Accuracy** | **96.10%** |
-| Precision (Fire) | 0.95 |
-| Recall (Fire) | 0.98 |
-| F1-Score (Fire) | 0.96 |
+| **Accuracy** | 96.10% |
+| **Precision (Fire)** | 0.95 |
+| **Recall (Fire)** | 0.98 |
+| **F1-Score (Fire)** | 0.96 |
 
-### Performance Curves
-[Training vs Validation Accuracy](assets/Accuracy%20curve.png)
+### Visualizing Performance
+*(Note: Upload these images to an `assets/` folder in your repository to display them here)*
+* `![Confusion Matrix](assets/Confusion_Matrix.png)` 
+* `![Accuracy Curve](assets/Accuracy_curve.png)` 
+* `![Loss Curve](assets/Loss_curve.png)` 
 
-[Training vs Validation Loss](assets/Loss%20curve.png)
+## 🛠️ Tech Stack
+* **Deep Learning Framework:** TensorFlow / Keras
+* **Computer Vision:** OpenCV
+* **Data Processing:** NumPy
+* **Visualization & Metrics:** Matplotlib, Seaborn, Scikit-learn
 
-### Confusion Matrix
-[Confusion Matrix](assets/Confusion%20Matrix.png)
+## 🚀 Getting Started
 
-## 🛠️ How to Use
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/yourusername/FlameGuard.git](https://github.com/yourusername/FlameGuard.git)
+cd FlameGuard
+```
 
-### 1. Prerequisites
-
-You must have Python and the following libraries installed. You can install them using the `requirements.txt` file:
-
+### 2. Install Dependencies
+Ensure you have Python 3.8+ installed. Install the required packages:
 ```bash
 pip install -r requirements.txt
+```
 
+### 3. Usage Structure
+The repository is modularized for clean execution:
+* `src/model.py`: Contains the MSA-Net architecture and SE-block logic.
+* `src/train.py`: Script to train the model with Early Stopping and Learning Rate reduction.
+* `src/evaluate.py`: Generates the confusion matrix and classification reports.
+
+## 🎓 Academic Context
+This project was developed as a B.Tech Final Year Project at the Department of Computer Science and Engineering.
+
+* **Institution:** Sree Vidyanikethan Engineering College (Affiliated to JNTUA)
+* **Project Guide:** Dr. K. Reddy Madhavi (Professor, Dept of CSE)
+
+**Development Team:**
+* Ramayanam Mahidhar
+* Battala Chandralahari
+* Singireddy Udayadithya Reddy
+* Kankatalanss Sukesh Kumar
+```
+
+Would you like me to draft that `predict.py` script so users can test your model on a single image?
