@@ -26,9 +26,9 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 | **F1-Score (Fire)** | 0.96 |
 
 ### Visualizing Performance
-* ![Confusion Matrix](assets/Confusion_Matrix.png) 
-* ![Accuracy Curve](assets/Accuracy_curve.png)
-* ![Loss Curve](assets/Loss_curve.png) 
+![Confusion Matrix](assets/Confusion_Matrix.png) 
+![Accuracy Curve](assets/Accuracy_curve.png)
+![Loss Curve](assets/Loss_curve.png) 
 
 ## 🛠️ Tech Stack
 * **Deep Learning Framework:** TensorFlow / Keras
