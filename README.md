@@ -26,10 +26,9 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 | **F1-Score (Fire)** | 0.96 |
 
 ### Visualizing Performance
-*(Note: Upload these images to an `assets/` folder in your repository to display them here)*
-* `![Confusion Matrix](assets/Confusion_Matrix.png)` 
-* `![Accuracy Curve](assets/Accuracy_curve.png)` 
-* `![Loss Curve](assets/Loss_curve.png)` 
+* ![Confusion Matrix](assets/Confusion_Matrix.png) 
+* ![Accuracy Curve](assets/Accuracy_curve.png)
+* ![Loss Curve](assets/Loss_curve.png) 
 
 ## 🛠️ Tech Stack
 * **Deep Learning Framework:** TensorFlow / Keras
@@ -68,5 +67,5 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
 * Kankatalanss Sukesh Kumar
-```
+
 
