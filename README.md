@@ -70,4 +70,3 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 * Kankatalanss Sukesh Kumar
 ```
 
-Would you like me to draft that `predict.py` script so users can test your model on a single image?
