@@ -26,9 +26,10 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 | **F1-Score (Fire)** | 0.96 |
 
 ### Visualizing Performance
-![Confusion Matrix](assets/Confusion_Matrix.png) 
-![Accuracy Curve](assets/Accuracy_curve.png)
-![Loss Curve](assets/Loss_curve.png) 
+*(Note: Upload these images to an `assets/` folder in your repository to display them here)*
+* `![Confusion Matrix](assets/Confusion_Matrix.png)` 
+* `![Accuracy Curve](assets/Accuracy_curve.png)` 
+* `![Loss Curve](assets/Loss_curve.png)` 
 
 ## 🛠️ Tech Stack
 * **Deep Learning Framework:** TensorFlow / Keras
@@ -40,7 +41,7 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/yourusername/FlameGuard.git](https://github.com/yourusername/FlameGuard.git)
+git clone [https://github.com/jstmahi/FlameGuard.git](https://github.com/jstmahi/FlameGuard.git)
 cd FlameGuard
 ```
 
@@ -55,6 +56,7 @@ The repository is modularized for clean execution:
 * `src/model.py`: Contains the MSA-Net architecture and SE-block logic.
 * `src/train.py`: Script to train the model with Early Stopping and Learning Rate reduction.
 * `src/evaluate.py`: Generates the confusion matrix and classification reports.
+* `src/predict.py`: Inference script to test the model on a single image.
 
 ## 🎓 Academic Context
 This project was developed as a B.Tech Final Year Project at the Department of Computer Science and Engineering.
@@ -67,5 +69,4 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
 * Kankatalanss Sukesh Kumar
-
-
+```
