@@ -68,5 +68,5 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 * Ramayanam Mahidhar
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
-* Kankatalanss Sukesh Kumar
+* Kankatala Nss Sukesh Kumar
 ```
