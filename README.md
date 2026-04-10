@@ -43,9 +43,11 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/jstmahi/FlameGuard.git](https://github.com/jstmahi/FlameGuard.git)
-cd FlameGuard
+
+git clone https://github.com/jstmahi/Forest-Fire-Detection.git
+cd Forest-Fire-Detection
 ```
+
 
 ### 2. Install Dependencies
 Ensure you have Python 3.8+ installed. Install the required packages:
