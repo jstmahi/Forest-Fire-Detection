@@ -7,8 +7,6 @@
 
 FlameGuard is a lightweight, high-accuracy deep learning system designed for the early detection of forest fires. By leveraging a **Multi-Scale Attention Network (MSA-Net)** integrated with **Squeeze-and-Excitation (SE) blocks**, this model achieves highly accurate, real-time fire detection optimized for edge devices like drones and IoT monitoring stations.
 
-## 🏆 Intellectual Property
-**Patent Application Filed:** A formal patent application has been filed for the novel MSA-Net architecture and its specific application in lightweight, edge-deployed forest fire detection systems developed in this repository.
 
 ## 📖 Abstract
 Forest fires pose a severe threat to ecosystems, biodiversity, and human life. Traditional detection methods often suffer from delayed response times and high false positive rates. FlameGuard addresses this by utilizing multi-scale convolutional layers to capture varied spatial patterns (from fine smoke details to large flames). The addition of SE blocks allows the network to adaptively recalibrate channel-wise feature responses, focusing on critical fire indicators while actively suppressing background noise like fog or sunlight. 
@@ -73,4 +71,7 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
 * Kankatala Nss Sukesh Kumar
+
+## Intellectual Property
+**Patent Application Filed:** A formal patent application has been filed for the novel MSA-Net architecture and its specific application in lightweight, edge-deployed forest fire detection systems developed in this repository.
 ```
