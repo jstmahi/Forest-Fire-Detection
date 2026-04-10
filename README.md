@@ -9,7 +9,7 @@ FlameGuard is a lightweight, high-accuracy deep learning system designed for the
 ## 📖 Abstract
 Forest fires pose a severe threat to ecosystems, biodiversity, and human life. Traditional detection methods often suffer from delayed response times and high false positive rates. FlameGuard addresses this by utilizing multi-scale convolutional layers to capture varied spatial patterns (from fine smoke details to large flames). The addition of SE blocks allows the network to adaptively recalibrate channel-wise feature responses, focusing on critical fire indicators while actively suppressing background noise like fog or sunlight. 
 
-## ✨ Key Features
+## Key Features
 * **Lightweight & Edge-Ready:** Designed with a compact parameter count (~2.8 million), making it ideal for deployment on resource-constrained hardware.
 * **Multi-Scale Feature Extraction:** Parallel 3x3, 5x5, and 7x7 convolution filters capture fire patterns at varying distances.
 * **Attention Mechanism:** Dynamic channel-wise recalibration via SE blocks enhances sensitivity to relevant features.
