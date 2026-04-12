@@ -28,7 +28,6 @@ The model was trained and evaluated on a curated, balanced dataset of fire, smok
 | **F1-Score (Fire)** | 0.96 |
 
 ### Visualizing Performance
-*(Note: Upload these images to an `assets/` folder in your repository to display them here)*
 ![Confusion Matrix](assets/Confusion_Matrix.png) 
 ![Accuracy Curve](assets/Accuracy_curve.png) 
 ![Loss Curve](assets/Loss_curve.png)
