@@ -79,4 +79,3 @@ This project was developed as a B.Tech Final Year Project at the Department of C
 
 ## 🏆 Intellectual Property
 **Patent Application Filed:** A formal patent application has been submitted for the novel MSA-Net architecture and its specific application in lightweight, edge-deployed forest fire detection systems developed in this repository.
-```
