@@ -5,74 +5,181 @@
 [![TensorFlow 2.11](https://img.shields.io/badge/TensorFlow-2.11-orange.svg)](https://www.tensorflow.org/)
 [![Patent: Pending](https://img.shields.io/badge/Patent-Pending-success.svg)](#-intellectual-property)
 
-FlameGuard is a lightweight, high-accuracy deep learning system designed for the early detection of forest fires. By leveraging a **Multi-Scale Attention Network (MSA-Net)** integrated with **Squeeze-and-Excitation (SE) blocks**, this model achieves highly accurate, real-time fire detection optimized for edge devices like drones and IoT monitoring stations.
+FlameGuard is a lightweight deep learning system for **real-time forest fire detection**, built using a custom Multi-Scale Attention Network (MSA-Net).
 
+Unlike conventional approaches that rely on heavy pretrained models, FlameGuard is **designed from scratch for edge deployment**, making it suitable for drones and IoT-based monitoring systems.
 
-## 📖 Abstract
-Forest fires pose a severe threat to ecosystems, biodiversity, and human life. Traditional detection methods often suffer from delayed response times and high false positive rates. FlameGuard addresses this by utilizing multi-scale convolutional layers to capture varied spatial patterns (from fine smoke details to large flames). The addition of SE blocks allows the network to adaptively recalibrate channel-wise feature responses, focusing on critical fire indicators while actively suppressing background noise like fog or sunlight. 
+---
+
+## Why This Project Exists
+
+Forest fire detection is not just a vision problem—it’s a **latency + reliability + compute constraint problem**.
+
+* Satellite systems → high latency
+* Human monitoring → not scalable
+* Standard CNNs (ResNet, VGG) → too heavy for edge devices
+* Real-world noise → fog, clouds, sunlight cause false alarms
+
+FlameGuard addresses all four.
+
+---
+
+## Core Idea
+
+Instead of scaling up a generic CNN, this project focuses on:
+
+* designing a **lightweight architecture**
+* improving **context awareness**
+* reducing **false positives without increasing compute**
+
+---
 
 ## Key Features
-* **Lightweight & Edge-Ready:** Designed with a compact parameter count (~2.8 million), making it ideal for deployment on resource-constrained hardware.
-* **Multi-Scale Feature Extraction:** Parallel 3x3, 5x5, and 7x7 convolution filters capture fire patterns at varying distances.
-* **Attention Mechanism:** Dynamic channel-wise recalibration via SE blocks enhances sensitivity to relevant features.
-* **High Reliability:** Proven to significantly minimize false positives and false negatives, which is critical for real-world safety applications.
 
-## 📊 Performance & Results
-The model was trained and evaluated on a curated, balanced dataset of fire, smoke, and non-fire images. It achieved an outstanding **test accuracy of 96.10%**.
+### Lightweight & Edge-Ready
 
-| Metric | Score |
-| :--- | :--- |
-| **Accuracy** | 96.10% |
-| **Precision (Fire)** | 0.95 |
-| **Recall (Fire)** | 0.98 |
-| **F1-Score (Fire)** | 0.96 |
+* ~2.8 million parameters
+* Designed for **low-latency inference on constrained hardware**
 
-### Visualizing Performance
-![Confusion Matrix](assets/Confusion_Matrix.png) 
-![Accuracy Curve](assets/Accuracy_curve.png) 
+### Multi-Scale Feature Extraction
+
+* Parallel 3×3, 5×5, 7×7 convolutions
+* Captures:
+
+  * fine smoke patterns
+  * mid-level textures
+  * large fire regions
+* Makes the model **scale-invariant**
+
+### Channel Attention (SE Blocks)
+
+* Learns which feature channels matter
+* Suppresses noise (clouds, trees, sunlight)
+* Improves precision **without adding heavy computation**
+
+### Robust Data Pipeline
+
+* Gaussian blur → atmospheric simulation
+* Contrast enhancement → lighting variation
+* Balanced dataset → avoids bias
+
+---
+
+## Performance
+
+The model was trained on a balanced dataset of fire and non-fire images and evaluated on a held-out test set.
+
+| Metric    | Score  |
+| :-------- | :----- |
+| Accuracy  | 96.10% |
+| Precision | 0.965  |
+| Recall    | 0.96   |
+| F1-Score  | 0.96   |
+| AUC-ROC   | 0.96   |
+
+### What These Numbers Mean
+
+* High precision → fewer false alarms
+* High recall → fewer missed fires
+* Balanced F1 → reliable real-world performance
+
+---
+
+## Visual Results
+
+![Confusion Matrix](assets/Confusion_Matrix.png)
+![Accuracy Curve](assets/Accuracy_curve.png)
 ![Loss Curve](assets/Loss_curve.png)
 
-## 🛠️ Tech Stack
-* **Deep Learning Framework:** TensorFlow / Keras
-* **Computer Vision:** OpenCV
-* **Data Processing:** NumPy
-* **Visualization & Metrics:** Matplotlib, Seaborn, Scikit-learn
+---
 
-## 🚀 Getting Started
+## Architecture Overview
 
-### 1. Clone the Repository
+MSA-Net combines:
+
+* Multi-scale convolution blocks
+* Squeeze-and-Excitation attention
+* Lightweight design constraints
+
+This allows the model to:
+
+* detect fires at different distances
+* suppress environmental noise
+* remain efficient enough for edge deployment
+
+---
+
+## Tech Stack
+
+* TensorFlow / Keras
+* OpenCV
+* NumPy
+* Scikit-learn
+* Matplotlib / Seaborn
+
+---
+
+## Getting Started
+
+### Clone the Repository
+
 ```bash
-
 git clone https://github.com/jstmahi/Forest-Fire-Detection.git
 cd Forest-Fire-Detection
 ```
 
+### Install Dependencies
 
-### 2. Install Dependencies
-Ensure you have Python 3.8+ installed. Install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Usage Structure
-The repository is modularized for clean execution:
-* `src/model.py`: Contains the MSA-Net architecture and SE-block logic.
-* `src/train.py`: Script to train the model with Early Stopping and Learning Rate reduction.
-* `src/evaluate.py`: Generates the confusion matrix and classification reports.
-* `src/predict.py`: Inference script to test the model on a single image.
+### Project Structure
 
-## 🎓 Academic Context
-This project was developed as a B.Tech Final Year Project at the Department of Computer Science and Engineering.
+* src/model.py → MSA-Net architecture
+* src/train.py → training pipeline
+* src/evaluate.py → metrics + confusion matrix
+* src/predict.py → inference on new images
 
-* **Institution:** Sree Vidyanikethan Engineering College (Affiliated to JNTUA)
-* **Project Guide:** Dr. K. Reddy Madhavi (Professor, Dept of CSE)
+---
 
-**Development Team:**
+## What Makes This Different
+
+Most projects:
+
+* use pretrained models
+* optimize for accuracy only
+
+This project:
+
+* designs a **custom architecture**
+* optimizes for **accuracy + efficiency**
+* explicitly targets **edge deployment constraints**
+* reduces false positives using **attention mechanisms**
+
+---
+
+## Academic Context
+
+Developed as a B.Tech Final Year Project
+Department of Computer Science and Engineering
+
+Institution: Sree Vidyanikethan Engineering College (JNTUA)
+
+Project Guide: Dr. K. Reddy Madhavi
+
+Team:
+
 * Ramayanam Mahidhar
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
 * Kankatala Nss Sukesh Kumar
 
+---
+
 ## Intellectual Property
-**Patent Application Filed:** A formal patent application has been filed for the novel MSA-Net architecture and its specific application in lightweight, edge-deployed forest fire detection systems developed in this repository.
+
+Patent Application Filed
+
+A formal patent application has been submitted for the MSA-Net architecture and its application in lightweight, edge-deployed forest fire detection systems.
 
