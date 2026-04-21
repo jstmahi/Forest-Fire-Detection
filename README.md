@@ -5,181 +5,78 @@
 [![TensorFlow 2.11](https://img.shields.io/badge/TensorFlow-2.11-orange.svg)](https://www.tensorflow.org/)
 [![Patent: Pending](https://img.shields.io/badge/Patent-Pending-success.svg)](#-intellectual-property)
 
-FlameGuard is a lightweight deep learning system for **real-time forest fire detection**, built using a custom Multi-Scale Attention Network (MSA-Net).
+FlameGuard is a lightweight deep learning system for **real-time forest fire detection**, built using a custom Multi-Scale Attention Network (MSA-Net). Unlike conventional approaches that rely on heavy pretrained models, FlameGuard is **designed from scratch for edge deployment**, making it ideal for drones and IoT-based monitoring systems.
 
-Unlike conventional approaches that rely on heavy pretrained models, FlameGuard is **designed from scratch for edge deployment**, making it suitable for drones and IoT-based monitoring systems.
+## 📖 The Problem: Beyond Just Computer Vision
+Forest fire detection is not just a vision problem—it’s a **latency, reliability, and compute constraint problem**. Traditional detection methods fail in real-world scenarios:
+* **Satellite systems:** Too high latency for early response.
+* **Standard CNNs (ResNet, VGG):** Too computationally heavy for edge devices.
+* **Environmental Noise:** Fog, clouds, and sunlight cause massive false alarm rates.
 
----
+FlameGuard addresses all of these by focusing on a lightweight architecture, context awareness, and reducing false positives without increasing computational load.
 
-## Why This Project Exists
+## ✨ Key Features & Architecture
+Instead of scaling up a generic CNN, this project utilizes a custom architecture tailored for constrained hardware:
 
-Forest fire detection is not just a vision problem—it’s a **latency + reliability + compute constraint problem**.
+* **Lightweight & Edge-Ready:** Contains only ~2.8 million parameters, designed specifically for low-latency inference on drones.
+* **Multi-Scale Feature Extraction:** Parallel 3x3, 5x5, and 7x7 convolutions capture fine smoke patterns, mid-level textures, and large fire regions simultaneously, making the model scale-invariant.
+* **Channel Attention (SE Blocks):** Squeeze-and-Excitation blocks learn which feature channels matter, actively suppressing background noise (clouds, trees) and improving precision without adding heavy computation.
+* **Robust Data Pipeline:** Incorporates Gaussian blur and contrast enhancement to simulate real-world atmospheric distortion and complex lighting variations.
 
-* Satellite systems → high latency
-* Human monitoring → not scalable
-* Standard CNNs (ResNet, VGG) → too heavy for edge devices
-* Real-world noise → fog, clouds, sunlight cause false alarms
+## 📊 Performance & Results
+The model was trained on a balanced dataset of fire and non-fire images and evaluated on a held-out test set. It achieved an outstanding **test accuracy of 96.10%**.
 
-FlameGuard addresses all four.
+| Metric | Score | Impact |
+| :--- | :--- | :--- |
+| **Accuracy** | 96.10% | Overall model correctness |
+| **Precision** | 0.965 | Fewer false alarms (critical for emergency response) |
+| **Recall** | 0.96 | Fewer missed fires (minimizing false negatives) |
+| **F1-Score** | 0.96 | Highly reliable real-world performance |
+| **AUC-ROC** | 0.96 | Strong separability between fire and non-fire classes |
 
----
-
-## Core Idea
-
-Instead of scaling up a generic CNN, this project focuses on:
-
-* designing a **lightweight architecture**
-* improving **context awareness**
-* reducing **false positives without increasing compute**
-
----
-
-## Key Features
-
-### Lightweight & Edge-Ready
-
-* ~2.8 million parameters
-* Designed for **low-latency inference on constrained hardware**
-
-### Multi-Scale Feature Extraction
-
-* Parallel 3×3, 5×5, 7×7 convolutions
-* Captures:
-
-  * fine smoke patterns
-  * mid-level textures
-  * large fire regions
-* Makes the model **scale-invariant**
-
-### Channel Attention (SE Blocks)
-
-* Learns which feature channels matter
-* Suppresses noise (clouds, trees, sunlight)
-* Improves precision **without adding heavy computation**
-
-### Robust Data Pipeline
-
-* Gaussian blur → atmospheric simulation
-* Contrast enhancement → lighting variation
-* Balanced dataset → avoids bias
-
----
-
-## Performance
-
-The model was trained on a balanced dataset of fire and non-fire images and evaluated on a held-out test set.
-
-| Metric    | Score  |
-| :-------- | :----- |
-| Accuracy  | 96.10% |
-| Precision | 0.965  |
-| Recall    | 0.96   |
-| F1-Score  | 0.96   |
-| AUC-ROC   | 0.96   |
-
-### What These Numbers Mean
-
-* High precision → fewer false alarms
-* High recall → fewer missed fires
-* Balanced F1 → reliable real-world performance
-
----
-
-## Visual Results
-
-![Confusion Matrix](assets/Confusion_Matrix.png)
-![Accuracy Curve](assets/Accuracy_curve.png)
+### Visualizing Performance
+*(Note: Images located in `/assets` folder)* ![Confusion Matrix](assets/Confusion_Matrix.png) 
+![Accuracy Curve](assets/Accuracy_curve.png) 
 ![Loss Curve](assets/Loss_curve.png)
 
----
+## 🛠️ Tech Stack
+* **Deep Learning Framework:** TensorFlow / Keras
+* **Computer Vision & Data Processing:** OpenCV, NumPy
+* **Visualization & Metrics:** Matplotlib, Seaborn, Scikit-learn
 
-## Architecture Overview
+## 🚀 Getting Started
 
-MSA-Net combines:
-
-* Multi-scale convolution blocks
-* Squeeze-and-Excitation attention
-* Lightweight design constraints
-
-This allows the model to:
-
-* detect fires at different distances
-* suppress environmental noise
-* remain efficient enough for edge deployment
-
----
-
-## Tech Stack
-
-* TensorFlow / Keras
-* OpenCV
-* NumPy
-* Scikit-learn
-* Matplotlib / Seaborn
-
----
-
-## Getting Started
-
-### Clone the Repository
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/jstmahi/Forest-Fire-Detection.git
+git clone [https://github.com/jstmahi/Forest-Fire-Detection.git](https://github.com/jstmahi/Forest-Fire-Detection.git)
 cd Forest-Fire-Detection
 ```
 
-### Install Dependencies
-
+### 2. Install Dependencies
+Ensure you have Python 3.8+ installed. 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Project Structure
+### 3. Usage Structure
+The repository is cleanly modularized:
+* `src/model.py`: Contains the MSA-Net architecture and SE-block logic.
+* `src/train.py`: Script to train the model with Early Stopping and Learning Rate reduction.
+* `src/evaluate.py`: Generates the confusion matrix and classification reports.
+* `src/predict.py`: Inference script to test the model on a single image.
 
-* src/model.py → MSA-Net architecture
-* src/train.py → training pipeline
-* src/evaluate.py → metrics + confusion matrix
-* src/predict.py → inference on new images
+## 🎓 Academic Context
+This project was developed as a B.Tech Final Year Project at the Department of Computer Science and Engineering.
 
----
+* **Institution:** Sree Vidyanikethan Engineering College (Affiliated to JNTUA)
+* **Project Guide:** Dr. K. Reddy Madhavi (Professor, Dept of CSE)
 
-## What Makes This Different
-
-Most projects:
-
-* use pretrained models
-* optimize for accuracy only
-
-This project:
-
-* designs a **custom architecture**
-* optimizes for **accuracy + efficiency**
-* explicitly targets **edge deployment constraints**
-* reduces false positives using **attention mechanisms**
-
----
-
-## Academic Context
-
-Developed as a B.Tech Final Year Project
-Department of Computer Science and Engineering
-
-Institution: Sree Vidyanikethan Engineering College (JNTUA)
-
-Project Guide: Dr. K. Reddy Madhavi
-
-Team:
-
+**Development Team:**
 * Ramayanam Mahidhar
 * Battala Chandralahari
 * Singireddy Udayadithya Reddy
 * Kankatala Nss Sukesh Kumar
 
----
-
-## Intellectual Property
-
-Patent Application Filed
-
-A formal patent application has been submitted for the MSA-Net architecture and its application in lightweight, edge-deployed forest fire detection systems.
-
+## 🏆 Intellectual Property
+**Patent Application Filed:** A formal patent application has been submitted for the novel MSA-Net architecture and its specific application in lightweight, edge-deployed forest fire detection systems developed in this repository.
+```
