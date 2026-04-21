@@ -15,7 +15,7 @@ Forest fire detection is not just a vision problem—it’s a **latency, reliabi
 
 FlameGuard addresses all of these by focusing on a lightweight architecture, context awareness, and reducing false positives without increasing computational load.
 
-## ✨ Key Features & Architecture
+##  Key Features & Architecture
 Instead of scaling up a generic CNN, this project utilizes a custom architecture tailored for constrained hardware:
 
 * **Lightweight & Edge-Ready:** Contains only ~2.8 million parameters, designed specifically for low-latency inference on drones.
@@ -35,7 +35,7 @@ The model was trained on a balanced dataset of fire and non-fire images and eval
 | **AUC-ROC** | 0.96 | Strong separability between fire and non-fire classes |
 
 ### Visualizing Performance
-*(Note: Images located in `/assets` folder)* ![Confusion Matrix](assets/Confusion_Matrix.png) 
+![Confusion Matrix](assets/Confusion_Matrix.png) 
 ![Accuracy Curve](assets/Accuracy_curve.png) 
 ![Loss Curve](assets/Loss_curve.png)
 
